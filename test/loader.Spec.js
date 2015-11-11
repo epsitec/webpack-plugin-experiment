@@ -18,4 +18,4 @@ console.log ('Component.type = ' + component.type);
 // the string ZORG in the source, it defines a constant named
 // Zorg at the start of the file. Removing this comment will
 // also remove the definition of Zorg.
-console.log ('Zorg says: ' + Zorg);
+console.log ('ZORG says ' + Zorg);
