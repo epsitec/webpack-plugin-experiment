@@ -6,7 +6,7 @@ var wallabyWebpack = require ('wallaby-webpack');
 var webpackConfig = require ('./webpack.config');
 var wallabyPostprocessor = wallabyWebpack (webpackConfig);
 
-module.exports = function (wallaby) {
+module.exports = function () {
   return {
     // set `load: false` to all source files and tests processed by webpack
     // (except external files),
@@ -14,6 +14,7 @@ module.exports = function (wallaby) {
     // their wrapped versions will be loaded instead
     files: [
       // {pattern: 'lib/jquery.js', instrument: false},
+      {pattern: 'test/polyfills/bind.js', instrument: false},
       {pattern: 'components/**/*.js', load: false},
       {pattern: 'src/**/*.js', load: false}
     ],
