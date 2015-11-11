@@ -3,7 +3,7 @@
 /* global __dirname */
 
 var path = require ('path');
-var Hello = require ('./plugins/hello.js');
+// var Hello = require ('./plugins/hello.js');
 
 module.exports = {
   entry: './index.js',
@@ -15,10 +15,11 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel?presets[]=es2015!include-components'
+        loader: 'babel?presets[]=react&presets[]=es2015!include-components'
       }
     ]
   },
+  devtool: 'source-map',
   externals: {
   },
   resolveLoader: {
@@ -31,6 +32,6 @@ module.exports = {
     extensions: ['', '.js']
   },
   plugins: [
-    new Hello ('foo')
+//    new Hello ('foo')
   ]
 };

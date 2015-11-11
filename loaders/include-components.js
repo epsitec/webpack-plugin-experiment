@@ -1,8 +1,29 @@
 'use strict';
 
 function IncludeComponents (content) {
-  console.log ('Content: ' + content);
-  return content;
+
+  var lines = content.split ('\n');
+
+  var pos = -1;
+
+  lines.forEach (function (line, index) {
+    console.log (index + ': ' + line);
+    if ((line.indexOf ('import ') === 0) &&
+        (line.indexOf ('\'react\';') !== -1)) {
+      pos = index;
+    }
+  });
+
+  if (pos !== -1) {
+    console.log ('Found import react at line ' + pos);
+    if (content.indexOf ('<Foo') >= 0) {
+      lines[pos] = lines[pos] + '\n' + 'const Foo = require ("../components/Foo.js");';
+    }
+    console.log ('Added Zorg');
+    lines[0] = 'const Zorg = "Ha!";\n' + lines[0];
+  }
+
+  return lines.join ('\n');
 }
 
 module.exports = IncludeComponents;
