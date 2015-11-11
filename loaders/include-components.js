@@ -19,7 +19,7 @@ function IncludeComponents (content) {
   if (pos !== -1) {
     console.log ('Found import react at line ' + pos);
     if (content.indexOf ('<Foo') >= 0) {
-      lines[pos] = lines[pos] + '\n' + 'const Foo = require ("../components/Foo.js");';
+      lines[pos] = lines[pos] + 'const Foo = require ("../components/Foo.js");';
       console.log ('Injected require for component Foo:');
       console.log (lines[pos]);
     }
@@ -27,7 +27,7 @@ function IncludeComponents (content) {
 
   if (content.indexOf ('ZORG') !== -1) {
     console.log ('Added Zorg constant');
-    lines[0] = 'const Zorg = "Ha!";\n' + lines[0];
+    lines[0] = 'const Zorg = "Ha!";' + lines[0];
   }
 
   return lines.join ('\n');
