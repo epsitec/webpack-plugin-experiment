@@ -1,5 +1,7 @@
 'use strict';
 
+// See https://webpack.github.io/docs/how-to-write-a-loader.html
+
 function IncludeComponents (content) {
 
   var lines = content.split ('\n');
