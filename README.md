@@ -35,5 +35,7 @@ node ./lib/bundle.js
 * Mocha does not work; this is expected, since the provided `mocha.opts` do not
   take in account the custom Webpack loader plugin. Therefore, any reference to
   `<Foo/>` will fail.
-* Wallaby.js stops with a mysterious message:  
-  `TypeError: 'undefined' is not a function (evaluating 'RegExp.prototype.test.bind(/^(data|aria)-[a-z_][a-z\d_.\-]*$/)')`
+* Wallaby.js stops with a mysterious message.
+
+Wallaby.js fails with the following error message:
+> TypeError: 'undefined' is not a function (evaluating 'RegExp.prototype.test.bind(/^(data|aria)-[a-z_][a-z\d_.\-]*$/)')
