@@ -6,10 +6,7 @@ var path = require ('path');
 // var Hello = require ('./plugins/hello.js');
 
 module.exports = {
-  entry: {
-    'index': './index.js',
-    'tests': './test/autoRequire.Spec.js'
-  },
+  entry: './index.js',
   output: {
     filename: 'lib/bundle.js'
   },

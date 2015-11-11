@@ -23,7 +23,7 @@ function IncludeComponents (content) {
     }
   }
 
-  if (content.indexOf ('Zorg') !== -1) {
+  if (content.indexOf ('ZORG') !== -1) {
     console.log ('Added Zorg constant');
     lines[0] = 'const Zorg = "Ha!";\n' + lines[0];
   }
